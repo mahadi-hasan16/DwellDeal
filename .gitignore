@@ -1,0 +1,31 @@
+# .NET Core files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider specific files
+.idea/
+
+# VS Code files
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
+
+# ASP.NET Core secrets
+secrets.json
+appsettings.Development.json
