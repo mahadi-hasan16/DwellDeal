@@ -19,8 +19,21 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
-              { "glob": "favicon.png", "input": "public", "output": "/" }
+              { 
+                "glob": "favicon.png", 
+                "input": "public", 
+                "output": "/" 
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets/",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/data/",
+                "output": "/data/"
+              }
             ],
             "styles": ["src/styles.css"],
             "scripts": []
