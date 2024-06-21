@@ -1,10 +1,16 @@
-<div class="card p-2 mb-3 mx-3">
-  <img class="card-img-top" src="assets/default.jpeg" alt="Card image cap" />
-  <div class="card-body">
-    <h4 class="card-title">Location: {{property.Location}}</h4>
-    <h5 class="card-title">Contact: {{property.Contact}}</h5>
-    <h5 class="card-title">Type: {{property.Type}}</h5>
-    <h5 class="card-title">Price: {{property.Price}}</h5>
-    <a href="#" class="btn btn-primary mt-2">Go somewhere</a>
+<div class="card-container">
+  <div class="card p-2 mb-3 mx-3">
+   <div class="img-wrapper">
+    <img class="card-img-top card-img" src="assets/default.jpeg" alt="Card image cap"/>
+   </div>
+    <div class="card-body">
+      <div class="properties">
+        <h4 class="card-title">{{ property.Location }}</h4>
+        <h5 class="card-title">Contact: {{ property.Contact }}</h5>
+        <h5 class="card-title">Type: {{ property.Type }}</h5>
+        <h5 class="card-title">Price: {{ property.Price }}</h5>
+      </div>
+      <a href="#" class="btn btn-primary mt-2">Go somewhere</a>
+    </div>
   </div>
 </div>

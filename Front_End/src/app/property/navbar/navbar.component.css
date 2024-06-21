@@ -1,0 +1,20 @@
+.navbar .navbar-nav .nav-item .nav-link {
+  color: white !important;
+  font: bolder;
+}
+
+.search-icon {
+  border: none;
+  outline: none;
+}
+
+.search-icon:hover {
+  background-color: white;
+}
+
+.search-icon:hover i.fa-search {
+  transform: scale(1.2, 1.2);
+  transition-duration: 500ms;
+  color: #3e434c !important;
+  font: bolder !important;
+}

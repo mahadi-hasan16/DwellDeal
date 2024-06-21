@@ -14,44 +14,9 @@ import { CommonModule } from '@angular/common';
 })
 export class PropertyListComponent implements OnInit {
 
+  properties: Array<any> = [];
   constructor() { }
-  properties: Array<any> = [
-    {
-      Id: 1,
-      Location: "Mirpur, Dhaka",
-      Contact: "01xxxxxxxxx",
-      Type: "Sell",
-      Price: 0
-    },
-    {
-      Id: 2,
-      Location: "Agrabad, Chittagonj",
-      Contact: "01xxxxxxxxx",
-      Type: "Rent",
-      Price: 0
-    },
-    {
-      Id: 3,
-      Location: "Banani, Dhaka",
-      Contact: "01xxxxxxxxx",
-      Type: "Sell",
-      Price: 0
-    },
-    {
-      Id: 4,
-      Location: "Mohakhali, Dhaka",
-      Contact: "01xxxxxxxxx",
-      Type: "Sell",
-      Price: 0
-    },
-    {
-      Id: 5,
-      Location: "Mohammadpur, Dhaka",
-      Contact: "01xxxxxxxxx",
-      Type: "Sell",
-      Price: 0
-    }
-  ]
+  
   ngOnInit() {
   }
 
