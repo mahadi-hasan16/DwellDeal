@@ -12,10 +12,11 @@ import { HousingService } from '../../services/housing.service';
 })
 export class PropertyListComponent implements OnInit {
   properties: Array<any> = [];
-  constructor(private housingService : HousingService) {}
+  constructor(private housingService: HousingService) {}
 
   ngOnInit() {
-    this.housingService.getAllProperties()
-      .subscribe((res:any) => this.properties = res);
+    this.housingService.getAllProperties().subscribe((res: any) => {
+      this.properties = res;
+    });
   }
 }

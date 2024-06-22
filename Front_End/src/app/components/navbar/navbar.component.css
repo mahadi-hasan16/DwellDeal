@@ -1,20 +1,52 @@
+.nav-item{
+  transition-duration: 500ms;
+}
+.nav-item:hover{
+  background-color: #38b6ff;
+  border-radius: 10px;
+  transition-duration: 500ms;
+}
+
 .navbar .navbar-nav .nav-item .nav-link {
-  color: white !important;
+  color: white;
   font: bolder;
+}
+
+.dropdown-item{
+  transition-duration: 500ms;
+}
+.dropdown-item:hover{
+  transition-duration: 500ms;
+  background-color: #38b6ff;
+}
+
+
+.search-box:hover{
+  transition-duration: 500ms;
+}
+.search-box:hover{
+  border-color: #38b6ff;
+  border-width: 3px;
+  transition-duration: 500ms;
 }
 
 .search-icon {
   border: none;
   outline: none;
 }
-
+.search-icon {
+  transition-duration: 500ms;
+}
 .search-icon:hover {
-  background-color: white;
+  background-color: #38b6ff;
+  transition-duration: 500ms;
 }
 
+.search-icon i.fa-search {
+  transition-duration: 500ms;
+}
 .search-icon:hover i.fa-search {
   transform: scale(1.2, 1.2);
-  transition-duration: 500ms;
-  color: #3e434c !important;
+  color: #fff !important;
   font: bolder !important;
 }

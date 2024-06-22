@@ -3,7 +3,7 @@
   style="background-color: #3e434c"
 >
   <div class="container-fluid">
-    <a class="navbar-brand p-0" href="#"
+    <a class="navbar-brand p-0" routerLink="/"
       ><img
         class="img-fluid"
         src="assets/logo.png"
@@ -28,42 +28,34 @@
         style="--bs-scroll-height: 100px"
       >
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" aria-current="page" routerLink="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" routerLink="#">Find</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="add-property">Crate Post</a>
         </li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
-            href="#"
+            routerLink="#"
             id="navbarScrollingDropdown"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Link
+            Sort by
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" routerLink="#">Rent</a></li>
+            <li><a class="dropdown-item" routerLink="#">Buy</a></li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link disabled"
-            href="#"
-            tabindex="-1"
-            aria-disabled="true"
-            >Link</a
-          >
         </li>
       </ul>
       <form class="d-flex">
         <input
-          class="form-control me-2"
+          class="form-control me-2 search-box"
           type="search"
           placeholder="Search"
           aria-label="Search"
