@@ -9,34 +9,34 @@
       <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
         <div class="form-group col-12">
             <label for="name" class="form-label">Name</label>
-            <span class="text-danger fw-bolder" *ngIf="!registrationForm.get('userName')?.valid"> *</span>
+            <span class="text-danger fw-bolder" *ngIf="!getUserName()?.valid"> *</span>
             <input type="text" class="form-control" formControlName="userName">
         </div>
 
         <div class="form-group col-12">
           <label for="email" class="form-label">Email</label>
-          <span class="text-danger fw-bolder" *ngIf="!registrationForm.get('email')?.valid"> *</span>
+          <span class="text-danger fw-bolder" *ngIf="!getEmail()?.valid"> *</span>
           <input type="text" class="form-control" formControlName="email">
-          <span class="text-danger" *ngIf="registrationForm.get('email')?.hasError('email') && registrationForm.get('email')?.touched">Enter a valid email</span>
+          <span class="text-danger" *ngIf="getEmail()?.hasError('email') && getEmail()?.touched">Enter a valid email</span>
         </div>
 
         <div class="form-group col-12">
           <label for="passwrod" class="form-label">Password</label>
-          <span class="text-danger fw-bolder" *ngIf="!registrationForm.get('password')?.valid"> *</span>
+          <span class="text-danger fw-bolder" *ngIf="!getPassword()?.valid"> *</span>
           <input type="password" class="form-control" formControlName="password">
-          <span class="text-danger" *ngIf="registrationForm.get('password')?.hasError('minlength') && registrationForm.get('password')?.touched">Password must have minimum 8 characters</span>
+          <span class="text-danger" *ngIf="getPassword()?.hasError('minlength') && getPassword()?.touched">Password must have minimum 8 characters</span>
         </div>
 
         <div class="form-group col-12">
           <label for="cpassword" class="form-label">Confirm Password</label>
-          <span class="text-danger fw-bolder" *ngIf="!registrationForm.get('confirmPassword')?.valid"> *</span>
+          <span class="text-danger fw-bolder" *ngIf="!getConfirmPassword()?.valid"> *</span>
           <input type="password" class="form-control" formControlName="confirmPassword">
           <!-- <span class="text-danger" *ngIf="registrationForm.get('confirmPassword')?.hasError('notmatched') && registrationForm.get('confirmPassword')?.valid">Password is not matched</span> -->
         </div>
 
         <div class="form-group col-12">
           <label for="mobile" class="form-label">Phone No.</label>
-          <span class="text-danger fw-bolder" *ngIf="!registrationForm.get('phoneNo')?.valid"> *</span>
+          <span class="text-danger fw-bolder" *ngIf="!getPhoneNo()?.valid"> *</span>
           <input type="text" class="form-control" formControlName="phoneNo">
         </div>
 
@@ -45,10 +45,6 @@
           <button type="reset" class="btn btn-secondary m-2">Cancel</button>
         </div>
       </form>
-<p>
-  Status: {{registrationForm.valid}}
-</p>
-
     </div>
   </div>
   </div>
