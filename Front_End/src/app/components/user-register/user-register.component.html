@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-6 m-auto">
+  <div class="card m-auto">
+    <div class="card-header fw-boldery
+    ">
+      Register
+    </div>
+    <div class="card-body">
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div class="form-group col-12">
+            <label for="name" class="form-label">Name</label>
+            <span class="text-danger fw-bolder" *ngIf="!registrationForm.get('userName')?.valid"> *</span>
+            <input type="text" class="form-control" formControlName="userName">
+        </div>
+
+        <div class="form-group col-12">
+          <label for="email" class="form-label">Email</label>
+          <span class="text-danger fw-bolder" *ngIf="!registrationForm.get('email')?.valid"> *</span>
+          <input type="text" class="form-control" formControlName="email">
+          <span class="text-danger" *ngIf="registrationForm.get('email')?.hasError('email') && registrationForm.get('email')?.touched">Enter a valid email</span>
+        </div>
+
+        <div class="form-group col-12">
+          <label for="passwrod" class="form-label">Password</label>
+          <span class="text-danger fw-bolder" *ngIf="!registrationForm.get('password')?.valid"> *</span>
+          <input type="password" class="form-control" formControlName="password">
+          <span class="text-danger" *ngIf="registrationForm.get('password')?.hasError('minlength') && registrationForm.get('password')?.touched">Password must have minimum 8 characters</span>
+        </div>
+
+        <div class="form-group col-12">
+          <label for="cpassword" class="form-label">Confirm Password</label>
+          <span class="text-danger fw-bolder" *ngIf="!registrationForm.get('confirmPassword')?.valid"> *</span>
+          <input type="password" class="form-control" formControlName="confirmPassword">
+          <!-- <span class="text-danger" *ngIf="registrationForm.get('confirmPassword')?.hasError('notmatched') && registrationForm.get('confirmPassword')?.valid">Password is not matched</span> -->
+        </div>
+
+        <div class="form-group col-12">
+          <label for="mobile" class="form-label">Phone No.</label>
+          <span class="text-danger fw-bolder" *ngIf="!registrationForm.get('phoneNo')?.valid"> *</span>
+          <input type="text" class="form-control" formControlName="phoneNo">
+        </div>
+
+        <div class="form-group col-12">
+          <button type="submit" class="btn btn-primary m-2">Save</button>
+          <button type="reset" class="btn btn-secondary m-2">Cancel</button>
+        </div>
+      </form>
+<p>
+  Status: {{registrationForm.valid}}
+</p>
+
+    </div>
+  </div>
+  </div>
+</div>

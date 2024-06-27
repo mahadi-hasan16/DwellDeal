@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
@@ -25,8 +25,8 @@ export class AddPropertyComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  onSubmit(){
+  onSubmit(Form:NgForm){
     console.log('Submitted');
+    console.log(Form.value.PropertyName);
   }
-
 }

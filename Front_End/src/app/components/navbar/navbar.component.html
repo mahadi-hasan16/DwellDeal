@@ -54,12 +54,20 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input
+        <!-- <input
           class="form-control me-2 search-box"
           type="search"
           placeholder="Search"
           aria-label="Search"
-        />
+        /> -->
+
+        <ul
+        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+        style="--bs-scroll-height: 100px"
+      >
+          <li class="nav-item"><a class="nav-link" routerLink="user/register/">Register</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="user/login/">Log in</a></li>
+        </ul>
         <button
           class="btn btn-outline-success search-icon"
           style="outline: none; border: none"
