@@ -1,3 +1,33 @@
-<p>
-  user-login works!
-</p>
+<div class="row">
+  <div class="col-6 m-auto">
+  <div class="card m-auto">
+    <div class="card-header fw-boldery
+    ">
+      Register
+    </div>
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group col-12">
+          <label for="email" class="form-label">Email</label>
+          <span class="text-danger fw-bolder" *ngIf="!getEmail()?.valid"> *</span>
+          <input type="text" class="form-control" formControlName="email">
+          <span class="text-danger" *ngIf="getEmail()?.hasError('email') && getEmail()?.touched">Enter a valid email</span>
+        </div>
+
+        <div class="form-group col-12">
+          <label for="passwrod" class="form-label">Password</label>
+          <span class="text-danger fw-bolder" *ngIf="!getPassword()?.valid"> *</span>
+          <input type="password" class="form-control" formControlName="password">
+          <span class="text-danger" *ngIf="getPassword()?.hasError('minlength') && getPassword()?.touched">Password must have minimum 8 characters</span>
+        </div>
+
+        <div class="form-group col-12">
+          <button type="submit" class="btn btn-primary m-2">Save</button>
+          <button type="reset" class="btn btn-secondary m-2">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+</div>

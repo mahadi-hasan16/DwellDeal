@@ -11,6 +11,7 @@ import {
 } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
+import { AlertifyService } from '../../services/alertify.service';
 
 @Component({
   selector: 'app-user-register',
@@ -25,7 +26,8 @@ export class UserRegisterComponent implements OnInit {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _userService: UserService
+    private _userService: UserService,
+    private _alertify: AlertifyService
   ) {}
 
   ngOnInit() {
@@ -82,8 +84,14 @@ export class UserRegisterComponent implements OnInit {
     console.log(this.registrationForm.value);
     // this.user = Object.assign(this.user, this.registrationForm.value);
 
-    this._userService.addUser(this.getUserData());
-    this.registrationForm.reset();
+    if(this.registrationForm.valid) {
+      this._userService.addUser(this.getUserData());
+      this.registrationForm.reset();
+      this._alertify.success('Congrats! Your registration is successful.')
+    }
+    else {
+      this._alertify.error('Please provide all the information.');
+    }
   }
 
   //Getters
@@ -102,18 +110,18 @@ export class UserRegisterComponent implements OnInit {
   }
 
   getEmail() {
-    return this.registrationForm?.get('email');
+    return this.registrationForm?.get('email') as FormControl;
   }
 
   getPassword() {
-    return this.registrationForm?.get('password');
+    return this.registrationForm?.get('password') as FormControl;
   }
 
   getConfirmPassword() {
-    return this.registrationForm?.get('confirmPasswod');
+    return this.registrationForm?.get('confirmPasswod') as FormControl;
   }
 
   getPhoneNo() {
-    return this.registrationForm?.get('phoneNo');
+    return this.registrationForm?.get('phoneNo') as FormControl;
   }
 }
