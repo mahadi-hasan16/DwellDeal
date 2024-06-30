@@ -6,7 +6,7 @@
       Register
     </div>
     <div class="card-body">
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
 
         <div class="form-group col-12">
           <label for="email" class="form-label">Email</label>
@@ -19,11 +19,11 @@
           <label for="passwrod" class="form-label">Password</label>
           <span class="text-danger fw-bolder" *ngIf="!getPassword()?.valid"> *</span>
           <input type="password" class="form-control" formControlName="password">
-          <span class="text-danger" *ngIf="getPassword()?.hasError('minlength') && getPassword()?.touched">Password must have minimum 8 characters</span>
+          <span class="text-danger" *ngIf="getPassword()?.hasError('minlength') && getPassword()?.touched">Enter the correct password.</span>
         </div>
 
         <div class="form-group col-12">
-          <button type="submit" class="btn btn-primary m-2">Save</button>
+          <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary m-2">Login</button>
           <button type="reset" class="btn btn-secondary m-2">Cancel</button>
         </div>
       </form>

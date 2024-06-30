@@ -3,6 +3,8 @@ import { UserService } from '../../services/user.service';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AlertifyService } from '../../services/alertify.service';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login',
@@ -16,25 +18,37 @@ loginForm!: FormGroup;
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _userService: UserService,
-    private _alertify: AlertifyService
+    private _alertify: AlertifyService,
+    private _auth: AuthService,
+    private _router: Router
   ) {}
 
   ngOnInit() {
-    
+    this.createLoginForm();
   }
 
   createLoginForm() {
     this.loginForm = this._formBuilder.group(
       {
         email : [null, [Validators.required, Validators.email]],
-        password: [null, [Validators.required]]
+        password: [null, [Validators.required, Validators.minLength(8)]]
       }
     );
   }
 
   
-onSubmit() {}
+onLogin() {
+  const token = this._auth.authUser(this.loginForm.value);
+  console.log(token);
+  if(token) {
+    localStorage.setItem('token', token.userName);
+    this._alertify.success('Login Successful');
+    this._router.navigate(['/home']);
+  }
+  else {
+    this._alertify.error('Login Error');
+  }
+}
 
 getEmail() {
   return this.loginForm?.get('email') as FormControl;

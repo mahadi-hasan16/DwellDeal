@@ -6,6 +6,7 @@ import { User } from '../models/user';
 })
 export class UserService {
   constructor() {}
+
   addUser(user: User) {
     let users: User[] = [];
     const storedUsers = localStorage.getItem('Users');
@@ -25,4 +26,5 @@ export class UserService {
     users = [user, ...users];
     localStorage.setItem('Users', JSON.stringify(users));
   }
+  
 }

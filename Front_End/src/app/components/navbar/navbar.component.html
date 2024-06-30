@@ -65,8 +65,9 @@
         class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
         style="--bs-scroll-height: 100px"
       >
-          <li class="nav-item"><a class="nav-link" routerLink="user/register/">Register</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="user/login/">Log in</a></li>
+          <li class="nav-item" *ngIf="!isLoggedin()"><a class="nav-link" routerLink="user/register/">Register</a></li>
+          <li class="nav-item" *ngIf="!isLoggedin()"><a class="nav-link" routerLink="user/login/">Login</a></li>
+          <li class="nav-item" *ngIf="isLoggedin()"><a class="nav-link" (click)="onLogout()">Log out</a></li>
         </ul>
         <button
           class="btn btn-outline-success search-icon"
