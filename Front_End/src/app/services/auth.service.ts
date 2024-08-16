@@ -18,7 +18,7 @@ export class AuthService {
       }
       return UserArray.find((p)=>
       {
-        p.userName === user.userName && p.password === user.password;
+        p.userName === user.userName && p.password === user.password; 
       })
     }
   }

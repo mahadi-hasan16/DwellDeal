@@ -2,24 +2,116 @@
   <div class="card-header">Add New Property</div>
   <div class="card-body">
     <form (submit)="onSubmit(Form)" #Form="ngForm">
-      <div class="form-group col-12">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" ngModel name="PropertyName" required />
-      </div>
+      <div>
+        <tabset #formTabs>
+          <tab heading="Basic Info" id="tab1">
+            <div class="form-group col-12">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                ngModel
+                name="PropertyName"
+                required
+              />
+            </div>
 
-      <div class="form-group col-12">
-        <label for="type">Type</label>
-        <input type="text" class="form-control" ngModel name="PropertyType" required />
-      </div>
+            <div class="form-group col-12">
+              <label for="type">Type</label>
+              <input
+                type="text"
+                class="form-control"
+                ngModel
+                name="PropertyType"
+                required
+              />
+            </div>
 
-      <div class="form-group col-12">
-        <label for="price">Price</label>
-        <input type="text" class="form-control" ngModel name="PropertyPrice" required />
-      </div>
+            <div class="form-group col-12">
+              <label for="price">Price</label>
+              <input
+                type="text"
+                class="form-control"
+                ngModel
+                name="PropertyPrice"
+                required
+              />
+            </div>
 
-      <div class="form-group col-12 d-flex justify-content-around pt-3">
-        <button [disabled]="!Form.valid" type="submit" class="btn btn-primary">Save</button>
-        <button type="reset" class="btn btn-primary">Cancel</button>
+            <div class="form-group col-12 pt-3">
+              <button
+                type="button"
+                class="btn btn-primary w-100"
+                (click)="selectTab(1)"
+              >
+                Next
+              </button>
+            </div>
+          </tab>
+
+          <tab heading="Basic and Area">
+            Pricing Information
+
+            <button
+              type="button"
+              class="btn btn-primary p-3"
+              (click)="selectTab(0)"
+            >
+              Back
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary p-3"
+              (click)="selectTab(2)"
+            >
+              Next
+            </button>
+          </tab>
+          <tab heading="Address"
+            >Address
+            <button
+              type="button"
+              class="btn btn-primary p-3"
+              (click)="selectTab(1)"
+            >
+              Back
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary p-3"
+              (click)="selectTab(3)"
+            >
+              Next
+            </button>
+          </tab>
+          <tab heading="Other Details"
+            >Other Details
+            <button
+              type="button"
+              class="btn btn-primary p-3"
+              (click)="selectTab(2)"
+            >
+              Back
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary p-3"
+              (click)="selectTab(4)"
+            >
+              Next
+            </button>
+          </tab>
+          <tab heading="Photos"
+            >Upload Photos
+            <button
+              type="button"
+              class="btn btn-primary p-3"
+              (click)="selectTab(3)"
+            >
+              Back
+            </button>
+          </tab>
+        </tabset>
       </div>
     </form>
   </div>

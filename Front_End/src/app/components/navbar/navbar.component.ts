@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
+import { AlertifyService } from '../../services/alertify.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,21 +11,23 @@ import { RouterLink, RouterModule } from '@angular/router';
     RouterLink,
     CommonModule
   ],
-  standalone: true
+  standalone: true,
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _alertify : AlertifyService) { }
 
   ngOnInit() {
   }
 
   isLoggedin() {
-    return localStorage.getItem('token');
+    // return localStorage.getItem('token');
+    return true;
   }
 
   onLogout() {
-    return localStorage.removeItem('token');
+    localStorage.removeItem('token');
+    this._alertify.success('You are logged out');
   }
 
 }

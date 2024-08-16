@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterLink, RouterModule } from '@angular/router';
+import { TabsetComponent, TabsModule } from 'ngx-bootstrap/tabs';
 
 @Component({
   selector: 'app-add-property',
@@ -10,14 +11,23 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
   imports:[
     RouterLink,
     RouterModule,
-    FormsModule
+    FormsModule,
+    TabsModule
   ]
 })
 export class AddPropertyComponent implements OnInit {
 
+  @ViewChild('formTabs') formTabs?: TabsetComponent;
+
   constructor(private router : Router) { }
 
   ngOnInit() {
+  }
+
+  selectTab(tabId: number) {
+    if (this.formTabs?.tabs[tabId]) {
+      this.formTabs.tabs[tabId].active = true;
+    }
   }
 
   onBack()
