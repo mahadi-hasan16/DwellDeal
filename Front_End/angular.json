@@ -19,10 +19,10 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              { 
-                "glob": "favicon.png", 
-                "input": "public", 
-                "output": "/" 
+              {
+                "glob": "favicon.png",
+                "input": "public",
+                "output": "/"
               },
               {
                 "glob": "**/*",
@@ -45,7 +45,6 @@
           },
           "configurations": {
             "production": {
-              
               "budgets": [
                 {
                   "type": "initial",

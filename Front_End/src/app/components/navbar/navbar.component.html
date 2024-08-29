@@ -84,42 +84,22 @@
           <i class="fa fa-search text-white icon"></i>
         </button>
 
-        <li class="dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            routerLink="#"
-            id="navbarScrollingDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="fa fa-user" aria-hidden="true"></i>
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li>
-              <a class="dropdown-item" href="#"
-                ><i class="fa fa-tachometer" aria-hidden="true"></i> My
-                Dashboard</a
-              >
+        <div class="btn-group" dropdown>
+          <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                  aria-controls="dropdown-animated">
+            Button dropdown <span class="caret"></span>
+          </button>
+          <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
+              role="menu" aria-labelledby="button-animated">
+            <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
             </li>
-            <li>
-              <a class="dropdown-item" href="#"
-                ><i class="fa fa-user-circle" aria-hidden="true"></i> My
-                Profile</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"
-                ><i class="fa fa-key" aria-hidden="true"></i> Change Password</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"
-                ><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a
-              >
-            </li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Something else
+              here</a></li>
           </ul>
-        </li>
+        </div>
+
+       
       </form>
     </div>
   </div>

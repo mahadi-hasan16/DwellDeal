@@ -1,16 +1,32 @@
 <div class="card-container">
   <div class="card p-2 mb-3 mx-3">
-   <div class="img-wrapper">
-    <img class="card-img-top card-img" src="assets/default.jpeg" alt="Card image cap"/>
-   </div>
-    <div class="card-body">
-      <div class="properties">
-        <h4 class="card-title">{{ property.Location }}</h4>
-        <h5 class="card-title">Contact: {{ property.Contact }}</h5>
-        <h5 class="card-title">Type: {{ property.Type }}</h5>
-        <h5 class="card-title">Price: {{ property.Price }}</h5>
-      </div>
-      <a routerLink="app-property-details/{{property.Id}}" class="btn btn-primary mt-2" style="font-weight: bolder;">Details</a>
+    <div class="img-wrapper">
+      <img
+        class="card-img-top card-img"
+        src="assets/default.jpeg"
+        alt="Card image cap"
+      />
+    </div>
+    <div class="card-body p-1">
+      <h1 class="mb-0">{{ property.BHK }} BHK {{ property.PType }}</h1>
+
+      in {{ property.Name }}
+      <span *ngIf="property.Name">,</span>
+      {{ property.City }}
+
+      <h6 class="mt-2">
+        {{ property.FType }}
+        <span *ngIf="property.FType !== 'Unfurnished'">Furnished</span> | Ready
+        to Move
+      </h6>
+
+      <hr class="mt-0 mb-2" />
+
+      <h6 class="mb-0">
+        Price: <span class>{{ property.Price }} USD.</span> | Area:
+        <span>{{ property.BuiltArea }} Sq Ft </span>
+      </h6>
+      <a *ngIf="!detailsButton" class="btn btn-primary mt-2" href="#">Details</a>
     </div>
   </div>
 </div>

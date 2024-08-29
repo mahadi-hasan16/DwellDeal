@@ -1,7 +1,6 @@
-export interface IProperty {
-    Id: number;
-    Location: string;
-    Contact: string;
-    Type: string;
-    Price: number;
+import { IPropertyBase } from "./IPropertybase";
+
+export interface IProperty extends IPropertyBase {
+    Description: string | null;
+    
 }
