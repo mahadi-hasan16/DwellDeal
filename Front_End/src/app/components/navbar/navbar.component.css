@@ -50,3 +50,8 @@
   color: #fff !important;
   font: bolder !important;
 }
+
+
+.btn.dropdown-toggle::after {
+  display: none;
+}

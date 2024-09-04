@@ -1,8 +1,45 @@
-<p>
-  property-details works!
-  Id is: {{propertyId}}<br>
-  <button (click)="onSelectNext()" class="btn btn-primary">Select Next</button><br>
-  <button (click)="onPaging('1')" class="btn btn-primary m-1 p-2">1</button>
-  <button (click)="onPaging('2')" class="btn btn-primary m-1 p-2">2</button>
-  <button (click)="onPaging('3')" class="btn btn-primary m-1 p-2">3</button>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <tabset>
+        <tab heading="Location" id="tab1">
+          <div class="map">
+            <img class="w-100" src="../../../assets/map_demo.jpg" alt="">
+          </div>
+        </tab>
+
+        <tab heading="More Images">
+          <carousel>
+
+            <slide>
+              <img src="https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="first slide" style="display: block; width: 100%;">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>First slide label</h3>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              </div>
+            </slide>
+
+            <slide>
+              <img src="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="second slide" style="display: block; width: 100%;">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Second slide label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </slide>
+
+            <slide>
+              <img src="https://images.pexels.com/photos/36762/scarlet-honeyeater-bird-red-feathers.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="third slide" style="display: block; width: 100%;">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Third slide label</h3>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              </div>
+            </slide>
+          </carousel>
+        </tab>
+
+        <tab heading="Basic Title 2">Basic content 2</tab>
+      </tabset>
+    </div>
+    <div class="col-2">Area 2</div>
+  </div>
+</div>

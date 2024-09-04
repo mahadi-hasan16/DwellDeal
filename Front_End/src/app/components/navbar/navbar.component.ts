@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { AlertifyService } from '../../services/alertify.service';
-import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
+import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +10,8 @@ import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
   styleUrls: ['./navbar.component.css'],
   imports: [
     RouterLink,
-    CommonModule
+    CommonModule,
+    BsDropdownModule
   ],
   standalone: true,
 })

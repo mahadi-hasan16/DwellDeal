@@ -1,13 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RouterLink, RouterModule } from '@angular/router';
+import {MatTabsModule} from '@angular/material/tabs';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @Component({
   selector: 'app-property-details',
   templateUrl: './property-details.component.html',
   styleUrls: ['./property-details.component.css'],
   imports: [
-    RouterLink
+    RouterLink,
+    FormsModule,
+    MatTabsModule,
+    TabsModule,
+    CarouselModule
   ],
   standalone: true
 })
@@ -17,10 +25,10 @@ export class PropertyDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    this.propertyId = Number(this.route.snapshot.params['id']);
+    this.propertyId = Number(this.route.snapshot.params['Id']);
 
     this.route.params.subscribe((params) => {
-      this.propertyId = Number(params['id']);
+      this.propertyId = Number(params['Id']);
     });
   }
 

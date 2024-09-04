@@ -28,16 +28,10 @@
         style="--bs-scroll-height: 100px"
       >
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="home">Home</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" routerLink="#">Find</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="add-property">Crate Post</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="#">List Property</a>
+          <a class="nav-link" routerLink="add-property"><i class="fa fa-plus" aria-hidden="true"></i> Crate Post</a>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -55,15 +49,19 @@
             <li><a class="dropdown-item" routerLink="#">Buy</a></li>
           </ul>
         </li>
-      </ul>
-      <form class="d-flex">
-        <!-- <input
-          class="form-control me-2 search-box"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        /> -->
 
+        <li class="nav-item">
+          <button
+          class="btn btn-outline-success search-icon"
+          style="outline: none; border: none"
+          type="submit"
+        >
+          <i class="fa fa-search text-white icon"></i>
+        </button>
+        </li>
+
+      </ul>
+  
         <ul
           class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
           style="--bs-scroll-height: 100px"
@@ -76,20 +74,15 @@
           </li>
         </ul>
 
-        <button
-          class="btn btn-outline-success search-icon"
-          style="outline: none; border: none"
-          type="submit"
-        >
-          <i class="fa fa-search text-white icon"></i>
-        </button>
+        
 
         <div class="btn-group" dropdown>
-          <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+          <button id="button-animated" dropdownToggle type="button" class="btn dropdown-toggle text-white"
                   aria-controls="dropdown-animated">
-            Button dropdown <span class="caret"></span>
+                  <i class="fa fa-user" aria-hidden="true"></i>
           </button>
-          <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu"
+
+          <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu dropdown-menu-end"
               role="menu" aria-labelledby="button-animated">
             <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
             <li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
@@ -99,8 +92,6 @@
           </ul>
         </div>
 
-       
-      </form>
     </div>
   </div>
 </nav>
