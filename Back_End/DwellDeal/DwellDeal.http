@@ -1,0 +1,6 @@
+@DwellDeal_HostAddress = http://localhost:5172
+
+GET {{DwellDeal_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

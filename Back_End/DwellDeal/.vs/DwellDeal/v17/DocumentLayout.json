@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 327,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAA2wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T20:36:20.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T20:31:17.65Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
