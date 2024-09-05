@@ -15,8 +15,16 @@ export class PropertyListComponent implements OnInit {
   constructor(private housingService: HousingService) {}
 
   ngOnInit() {
-    this.housingService.getAllProperties().subscribe((res: any) => {
-      this.properties = res;
-    });
+    this.housingService.getAllProperties().subscribe(
+      (data: any) => {
+      this.properties = data;
+      console.log(this.properties);
+    }
+  );
+
+  this.housingService.getAllCities().subscribe(
+    (data) => console.log(data)
+  )
+
   }
 }

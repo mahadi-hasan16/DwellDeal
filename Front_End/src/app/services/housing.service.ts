@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Property } from '../models/Property';
 
 @Injectable({
@@ -9,8 +9,13 @@ import { Property } from '../models/Property';
 export class HousingService {
 
 constructor(private httpClient : HttpClient) { }
+
+getAllCities(): Observable<any>{
+  return this.httpClient.get('http://localhost:5172/api/city/');
+}
+
 getAllProperties(){
-  return this.httpClient.get('data/properties.json');
+  return this.httpClient.get('./../../data/properties.json');
   // .pipe(
   //   map((data)=>{
   //     const properties: Array<any> = [];

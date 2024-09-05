@@ -12,7 +12,7 @@ export class Property implements IPropertyBase {
     CarpetArea?: number;
     Address: string | null = null;
     Address2?: string;
-    City: string | null = null;
+    City: string | null = '';
     FloorNo?: string;
     TotalFloor?: string;
     RTM: number = 0;
