@@ -101,13 +101,11 @@
                 </div>
 
                 <div class="form-group col-12">
-                  <label class="fw-bold">City</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    formControlName="City"
-                    [(ngModel)]="propertyView.City"
-                  />
+                  <label class="fw-bold">City</label><br>
+                  <select class="btn btn-primary" name="" id="">
+                    <option value="">-Select City-</option>
+                    <option class="bg-white text-black" *ngFor="let city of cities" value="{{city}}">{{city}}</option>
+                  </select>
                 </div>
 
                 <div class="form-group col-12">

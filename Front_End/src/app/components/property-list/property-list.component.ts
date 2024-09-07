@@ -21,10 +21,5 @@ export class PropertyListComponent implements OnInit {
       console.log(this.properties);
     }
   );
-
-  this.housingService.getAllCities().subscribe(
-    (data) => console.log(data)
-  )
-
   }
 }

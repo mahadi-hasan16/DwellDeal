@@ -42,6 +42,7 @@ export class AddPropertyComponent implements OnInit {
 
   propertyTypes: Array<String> = ['House', 'Appartment', 'Duplex', 'Triplex'];
   furnushTypes: Array<String> = ['Semi', 'Full', 'Unfurnished'];
+  cities: Array<String> = [];
 
   addPropertyForm!: FormGroup;
 
@@ -69,6 +70,10 @@ export class AddPropertyComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
+    this.housingService.getAllCities().subscribe( data => {
+      this.cities = data;
+    }
+    )
   }
 
   createForm() {
