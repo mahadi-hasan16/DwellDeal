@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\controllers\\citycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|solutionrelative:controllers\\citycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\models\\dtos\\addcitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|solutionrelative:models\\dtos\\addcitydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\helpers\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|solutionrelative:helpers\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|solutionrelative:interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\interfaces\\icityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|solutionrelative:interfaces\\icityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|solutionrelative:data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,40 +47,88 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AddCityDTO.cs",
-              "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Models\\DTOs\\AddCityDTO.cs",
-              "RelativeDocumentMoniker": "Models\\DTOs\\AddCityDTO.cs",
-              "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Models\\DTOs\\AddCityDTO.cs",
-              "RelativeToolTip": "Models\\DTOs\\AddCityDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T19:58:34.096Z",
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-09T20:45:47.901Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAADoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T20:49:37.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AutoMapperProfiles.cs",
+              "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Helpers\\AutoMapperProfiles.cs",
+              "RelativeDocumentMoniker": "Helpers\\AutoMapperProfiles.cs",
+              "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Helpers\\AutoMapperProfiles.cs",
+              "RelativeToolTip": "Helpers\\AutoMapperProfiles.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T20:45:23.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ICityRepository.cs",
+              "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Interfaces\\ICityRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\ICityRepository.cs",
+              "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Interfaces\\ICityRepository.cs",
+              "RelativeToolTip": "Interfaces\\ICityRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T19:40:34.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Data\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Data\\UnitOfWork.cs",
+              "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Data\\UnitOfWork.cs",
+              "RelativeToolTip": "Data\\UnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T17:47:05.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T17:44:44.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CityController.cs",
               "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Controllers\\CityController.cs",
               "RelativeDocumentMoniker": "Controllers\\CityController.cs",
               "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Controllers\\CityController.cs",
               "RelativeToolTip": "Controllers\\CityController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAxwCwAAAA9AAAA",
+              "ViewState": "AQIAADEAAAAAAAAAAAAywC4AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T17:25:59.515Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T17:06:55.35Z"
+              "WhenOpened": "2024-09-08T14:31:25.572Z"
             }
           ]
         }

@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using AutoMapper;
 using DwellDeal.Data;
+using DwellDeal.Interfaces;
 using DwellDeal.Models.DTOs;
 using DwellDeal.Models.Entities;
 using Microsoft.AspNetCore.Http;
@@ -12,44 +14,54 @@ namespace DwellDeal.Controllers
     [ApiController]
     public class CityController : ControllerBase
     {
-        private readonly ApplicationDbContext _dbContext;
-        public CityController(ApplicationDbContext dbContext)
+        private readonly IUnitOfWork _unitOfWork;
+
+        private readonly IMapper _mapper;
+        public CityController(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            _dbContext = dbContext;
+            _unitOfWork = unitOfWork;
+
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetCities()
         {
-            var cities = await _dbContext.Cities.ToListAsync();
-            return Ok(cities);
+            var cities = await _unitOfWork.CityRepository.GetCitiesAsync();
+
+            var citiesDto = _mapper.Map<IEnumerable<CityDto>>(cities);
+
+            /*var citiesDto = from city in cities
+                            select new CityDto()
+                            {
+                                Id = city.Id,
+                                Name = city.Name
+                            };*/
+
+            return Ok(citiesDto);
         }
 
-        [HttpPost("add/{cityName}")]
-        public async Task<IActionResult> AddCity(string cityName)
+        [HttpPost("add")]
+        public async Task<IActionResult> AddCityAsync(CityDto NewCity)
         {
-            var newCity = new City()
-            {
-                Name = cityName
-            };
+            var city = _mapper.Map<City>(NewCity);
 
-            await _dbContext.Cities.AddAsync(newCity);
-            await _dbContext.SaveChangesAsync();
+          /*  var city = new City()
+            {
+                Name = NewCity.Name
+            }; */
+
+            await _unitOfWork.CityRepository.AddCityAsync(city);
+            await _unitOfWork.SaveChangesAsync();
             
-            return Ok(newCity);
+            return StatusCode(201);
         }
 
-        [HttpDelete("delete/{Id}")]
-        public async Task<IActionResult> DeleteCity(int Id)
+        [HttpDelete("remove/{Id}")]
+        public async Task<IActionResult> RemoveCity(int Id)
         {
-            var city = await _dbContext.Cities.FindAsync(Id);
-            if(city is null)
-            {
-                return NotFound();
-            }
-
-            _dbContext.Cities.Remove(city);
-            await _dbContext.SaveChangesAsync();
+            _unitOfWork.CityRepository.RemoveCity(Id);
+            await _unitOfWork.SaveChangesAsync();
             return Ok();
         }
     }

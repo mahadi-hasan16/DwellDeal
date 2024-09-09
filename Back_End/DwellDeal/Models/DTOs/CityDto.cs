@@ -1,7 +1,8 @@
 ﻿namespace DwellDeal.Models.DTOs
 {
-    public class AddCityDTO
+    public class CityDto
     {
+        public int Id { get; set; }
         public string Name { set; get; }
     }
 }
