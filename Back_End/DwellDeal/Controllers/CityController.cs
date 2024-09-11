@@ -27,6 +27,7 @@ namespace DwellDeal.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCities()
         {
+            throw new UnauthorizedAccessException();
             var cities = await _unitOfWork.CityRepository.GetCitiesAsync();
 
             var citiesDto = _mapper.Map<IEnumerable<CityDto>>(cities);

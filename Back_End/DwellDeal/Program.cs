@@ -3,6 +3,7 @@ using DwellDeal.Data;
 using DwellDeal.Data.Repository;
 using DwellDeal.Helpers;
 using DwellDeal.Interfaces;
+using DwellDeal.Middlewares;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers().AddNewtonsoftJson();
+builder.Services.AddControllers();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
@@ -44,8 +45,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-else
+/*else
 {
+    app.UseSwagger();
+    app.UseSwaggerUI();
     app.UseExceptionHandler(options =>
     options.Run(async httpContext =>
     {
@@ -58,7 +61,10 @@ else
     }
     )
     );
-}
+}*/
+
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseRouting();
 
