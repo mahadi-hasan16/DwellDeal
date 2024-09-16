@@ -1,4 +1,6 @@
-﻿namespace DwellDeal.Errors
+﻿using System.Text.Json;
+
+namespace DwellDeal.Errors
 {
     public class ApiErrors
     {
@@ -11,5 +13,10 @@
         public int ErrorCode { get; set; }
         public string ErrorMessage { get; set; }
         public string ErrorDetails { get; set; }
+
+        public override string ToString()
+        {
+            return JsonSerializer.Serialize(this);
+        }
     }
 }

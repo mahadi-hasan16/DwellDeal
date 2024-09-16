@@ -9,6 +9,7 @@ namespace DwellDeal.Middlewares
         private readonly RequestDelegate _next;
 
         private readonly ILogger<Exception> _logger;
+
         private readonly IHostEnvironment _env;
         public ExceptionMiddleware(
             RequestDelegate next, 

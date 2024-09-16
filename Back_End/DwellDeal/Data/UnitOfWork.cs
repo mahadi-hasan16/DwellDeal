@@ -13,6 +13,8 @@ namespace DwellDeal.Data
         }
         public ICityRepository CityRepository => new CityRepository(_dbContext);
 
+        public IUserRepository UserRepository => new UserRepository(_dbContext);
+
         public async Task SaveChangesAsync()
         {
             await _dbContext.SaveChangesAsync();
