@@ -30,24 +30,18 @@ loginForm!: FormGroup;
   createLoginForm() {
     this.loginForm = this._formBuilder.group(
       {
-        email : [null, [Validators.required, Validators.email]],
-        password: [null, [Validators.required, Validators.minLength(8)]]
+        username : [null, [Validators.required]],
+        password: [null, [Validators.required]]
       }
     );
   }
 
   
-onLogin() {
-  const token = this._auth.authUser(this.loginForm.value);
-  console.log(token);
-  if(token) {
-    localStorage.setItem('token', token.userName);
-    this._alertify.success('Login Successful');
-    this._router.navigate(['/home']);
-  }
-  else {
-    this._alertify.error('Login Error');
-  }
+onLogin(loginForm: FormGroup) {
+  this._auth.authUser(loginForm).subscribe(
+    res => console.log(res)
+  )
+ 
 }
 
 getEmail() {

@@ -6,20 +6,17 @@
       Register
     </div>
     <div class="card-body">
-      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm)">
 
         <div class="form-group col-12">
-          <label for="email" class="form-label">Email</label>
-          <span class="text-danger fw-bolder" *ngIf="!getEmail()?.valid"> *</span>
-          <input type="text" class="form-control" formControlName="email">
-          <span class="text-danger" *ngIf="getEmail()?.hasError('email') && getEmail()?.touched">Enter a valid email</span>
+          <label for="username" class="form-label">User Name</label>
+          <input type="text" class="form-control" formControlName="username">
         </div>
 
         <div class="form-group col-12">
           <label for="passwrod" class="form-label">Password</label>
           <span class="text-danger fw-bolder" *ngIf="!getPassword()?.valid"> *</span>
           <input type="password" class="form-control" formControlName="password">
-          <span class="text-danger" *ngIf="getPassword()?.hasError('minlength') && getPassword()?.touched">Enter the correct password.</span>
         </div>
 
         <div class="form-group col-12">

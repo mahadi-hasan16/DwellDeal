@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
 
   isLoggedin() {
     // return localStorage.getItem('token');
-    return true;
+    return false;
   }
 
   onLogout() {

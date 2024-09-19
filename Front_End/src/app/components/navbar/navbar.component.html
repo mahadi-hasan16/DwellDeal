@@ -76,7 +76,7 @@
 
         
 
-        <div class="btn-group" dropdown>
+        <div *ngIf="isLoggedin()" class="btn-group" dropdown>
           <button id="button-animated" dropdownToggle type="button" class="btn dropdown-toggle text-white"
                   aria-controls="dropdown-animated">
                   <i class="fa fa-user" aria-hidden="true"></i>
