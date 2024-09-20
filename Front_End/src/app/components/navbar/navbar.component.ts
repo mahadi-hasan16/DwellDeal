@@ -23,12 +23,13 @@ export class NavbarComponent implements OnInit {
   }
 
   isLoggedin() {
-    // return localStorage.getItem('token');
-    return false;
+    return localStorage.getItem('username');
+   // return false;
   }
 
   onLogout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('username')
     this._alertify.success('You are logged out');
   }
 

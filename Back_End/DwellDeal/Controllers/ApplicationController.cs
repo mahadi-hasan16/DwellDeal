@@ -22,7 +22,7 @@ namespace DwellDeal.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("/register")]
+        [HttpPost("register")]
         public async Task<IActionResult> Register(LoginReqDto loginReqDto)
         {
             if(await _unitOfWork.UserRepository.UserAlreadyExists(loginReqDto.Username))

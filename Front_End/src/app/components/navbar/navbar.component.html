@@ -63,7 +63,7 @@
       </ul>
   
         <ul
-          class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+          class="navbar-nav my-2 my-lg-0 navbar-nav-scroll"
           style="--bs-scroll-height: 100px"
         >
           <li class="nav-item" *ngIf="!isLoggedin()">
@@ -87,8 +87,7 @@
             <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
             <li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
             </li>
-            <li role="menuitem"><a class="dropdown-item" href="#">Something else
-              here</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#" (click)="onLogout()">Logout</a></li>
           </ul>
         </div>
 

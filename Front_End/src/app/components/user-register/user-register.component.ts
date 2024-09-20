@@ -12,6 +12,7 @@ import {
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
 import { AlertifyService } from '../../services/alertify.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-user-register',
@@ -27,6 +28,7 @@ export class UserRegisterComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     private _userService: UserService,
+    private _auth: AuthService,
     private _alertify: AlertifyService
   ) {}
 
@@ -56,7 +58,7 @@ export class UserRegisterComponent implements OnInit {
   createRegistrationForm() {
     this.registrationForm = this._formBuilder.group(
       {
-        userName: [null, Validators.required],
+        username: [null, Validators.required],
         email: [null, [Validators.required, Validators.email]],
         password: [null, [Validators.required, Validators.minLength(8)]],
         confirmPassword: [null, [Validators.required]],
@@ -80,18 +82,9 @@ export class UserRegisterComponent implements OnInit {
       : { notMathchedStatus: true };
   }
 
-  onSubmit() {
-    console.log(this.registrationForm.value);
-    // this.user = Object.assign(this.user, this.registrationForm.value);
-
-    if(this.registrationForm.valid) {
-      this._userService.addUser(this.getUserData());
-      this.registrationForm.reset();
-      this._alertify.success('Congrats! Your registration is successful.')
-    }
-    else {
-      this._alertify.error('Please provide all the information.');
-    }
+  onSubmit(registrationForm: FormGroup) {
+   this._auth.Register(registrationForm.value).subscribe(()=>{},
+  error => console.log(error.message))
   }
 
   //Getters

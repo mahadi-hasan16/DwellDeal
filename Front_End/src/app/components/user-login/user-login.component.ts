@@ -5,6 +5,7 @@ import { AlertifyService } from '../../services/alertify.service';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { loginRes } from '../../interfaces/User';
 
 @Component({
   selector: 'app-user-login',
@@ -38,8 +39,13 @@ loginForm!: FormGroup;
 
   
 onLogin(loginForm: FormGroup) {
-  this._auth.authUser(loginForm).subscribe(
-    res => console.log(res)
+  this._auth.Login(loginForm.value).subscribe(
+    (res: loginRes) => {
+      const user = res;
+      localStorage.setItem('username', user.username);
+      localStorage.setItem('token', user.token);
+      this._router.navigate(['/']);
+      } 
   )
  
 }
