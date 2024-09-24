@@ -1,6 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using DwellDeal.Errors;
 using DwellDeal.Interfaces;
 using DwellDeal.Models.DTOs;
 using DwellDeal.Models.Entities;
@@ -42,9 +43,15 @@ namespace DwellDeal.Controllers
         {
             var user = await _unitOfWork.UserRepository.Authenticate(loginReqDto.Username, loginReqDto.Password);
 
+            ApiErrors apiErrors = new ApiErrors();
+
             if(user == null)
             {
-                return Unauthorized();
+                apiErrors.ErrorCode = Unauthorized().StatusCode;
+                apiErrors.ErrorMessage = "Invalid username or password";
+                apiErrors.ErrorDetails = "This error apprears when provided Username or Id does not exist.";
+
+                return Unauthorized(apiErrors);
             }
 
             var loginResDto = new LoginResDto()

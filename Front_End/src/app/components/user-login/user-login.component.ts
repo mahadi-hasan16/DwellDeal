@@ -44,10 +44,8 @@ onLogin(loginForm: FormGroup) {
       const user = res;
       localStorage.setItem('username', user.username);
       localStorage.setItem('token', user.token);
-      this._router.navigate(['/']);
       } 
   )
- 
 }
 
 getEmail() {

@@ -1,9 +1,10 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
-import { provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { HousingService } from './services/housing.service';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HttpErrorInterceptor } from './services/ErrorHandler';
 
 export const appConfig: ApplicationConfig = {
   providers: 
@@ -11,6 +12,13 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes),
-    HousingService, provideAnimationsAsync()
+    HousingService, 
+    provideAnimationsAsync(),
+    provideHttpClient(withInterceptorsFromDi()),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    }
   ]
 };

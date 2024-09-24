@@ -83,11 +83,10 @@ export class UserRegisterComponent implements OnInit {
   }
 
   onSubmit(registrationForm: FormGroup) {
-   this._auth.Register(registrationForm.value).subscribe(()=>{},
-  error => console.log(error.message))
+   this._auth.Register(registrationForm.value).subscribe(()=>{})
   }
 
-  //Getters
+  //--------------------[Getters]---------------
 
   getUserData(): User {
     return (this.user = {
