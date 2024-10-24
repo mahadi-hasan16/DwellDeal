@@ -31,18 +31,18 @@ export class HttpErrorInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     //console.log('OK');
     return next.handle(req).pipe(
-      // retry({
-      //   delay: (error) =>
-      //     error.pipe(
-      //       concatMap((checkError: HttpErrorResponse, count: number) => {
-      //         if (checkError.status === ErrorCodes.serverDown && count <= 5) {
-      //           return of(checkError).pipe(delay(2000));
-      //         } else {
-      //           return throwError(() => new Error(checkError.error));
-      //         }
-      //       })
-      //     ),
-      // }),
+      
+      
+      retry({
+        count: 4,
+        delay: (error: HttpErrorResponse, count: number) =>{
+          if(error.status === ErrorCodes.serverDown){
+            return of(error).pipe(delay(100));
+          }
+          return throwError(() => {new Error(error.error)})
+        }
+      }),
+
       catchError((error: HttpErrorResponse) => {
         const errorMessage = this.setErrorMessage(error);
 
@@ -50,16 +50,6 @@ export class HttpErrorInterceptor implements HttpInterceptor {
         return throwError(() => new Error(errorMessage));
       })
     );
-  }
-
-  shouldReTry(error: HttpErrorResponse): Observable<unknown>{
-    if(error.status === ErrorCodes.serverDown)
-      {
-        retry({count: 5, delay: 2000});
-      }
-      else{
-        return throwError(() => Error(error.error));
-      }
   }
 
   setErrorMessage(error: HttpErrorResponse): string {

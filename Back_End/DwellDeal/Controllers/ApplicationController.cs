@@ -2,6 +2,7 @@
 using System.Security.Claims;
 using System.Text;
 using DwellDeal.Errors;
+using DwellDeal.Extentions;
 using DwellDeal.Interfaces;
 using DwellDeal.Models.DTOs;
 using DwellDeal.Models.Entities;
@@ -26,6 +27,16 @@ namespace DwellDeal.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(LoginReqDto loginReqDto)
         {
+            ApiErrors apiErrors = new ApiErrors();
+
+            if(loginReqDto.Username.IsEmpty() || loginReqDto.Password.IsEmpty())
+            {
+                apiErrors.ErrorCode = BadRequest().StatusCode;
+                apiErrors.ErrorMessage = "Username or Password can't be empty";
+
+                return BadRequest(apiErrors);
+            }
+            
             if(await _unitOfWork.UserRepository.UserAlreadyExists(loginReqDto.Username))
             {
                 return BadRequest("User already exists. Please try something else.");
