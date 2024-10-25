@@ -1,6 +1,4 @@
-import { IPropertyBase } from "../interfaces/IPropertyBase";
-
-export class Property implements IPropertyBase {
+export class Property{
     Id: number = 0;
     SellRent: number = 0;
     Name: string | null = null;

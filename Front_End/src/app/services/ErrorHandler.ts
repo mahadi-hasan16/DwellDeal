@@ -15,7 +15,6 @@ import {
   Observable,
   of,
   retry,
-  retryWhen,
   throwError,
 } from 'rxjs';
 import { AlertifyService } from './alertify.service';

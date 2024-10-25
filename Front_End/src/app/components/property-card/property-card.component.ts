@@ -4,6 +4,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { PropertyDetailsComponent } from '../property-details/property-details.component';
 import { CommonModule } from '@angular/common';
 import { IPropertyBase } from '../../interfaces/IPropertyBase';
+import { Property } from '../../models/Property';
 
 @Component({
   selector: 'app-property-card',
@@ -19,7 +20,7 @@ import { IPropertyBase } from '../../interfaces/IPropertyBase';
 export class PropertyCardComponent implements OnInit {
 
   constructor() { }
-  @Input() property: IPropertyBase | any;
+  @Input() property: Property | any;
   @Input() detailsButton: boolean = false;
 
   ngOnInit() {

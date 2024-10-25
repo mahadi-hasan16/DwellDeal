@@ -37,7 +37,7 @@ export class AddPropertyComponent implements OnInit {
   @ViewChild('formTabs') formTabs?: TabsetComponent;
   // @ViewChild('Form') addPropertyForm!: NgForm;
 
-  property = new Property();
+  property: Property = new Property();
   sellRent = '1';
 
   propertyTypes: Array<String> = ['House', 'Appartment', 'Duplex', 'Triplex'];
@@ -46,8 +46,8 @@ export class AddPropertyComponent implements OnInit {
 
   addPropertyForm!: FormGroup;
 
-  propertyView: IPropertyBase = {
-    Id: null,
+  propertyView: Property = {
+    Id: 0,
     SellRent: 0,
     Name: '',
     // Location: null,
@@ -55,11 +55,14 @@ export class AddPropertyComponent implements OnInit {
     Price: 0,
     PType: '',
     FType: '',
-    BHK: null,
+    BHK: 0,
     BuiltArea: 0,
     City: '',
     RTM: 0,
-    Image: null,
+    Image: '',
+    Address: null,
+    PostedOn: null,
+    PostedBy: null
   };
 
   constructor(
@@ -73,7 +76,8 @@ export class AddPropertyComponent implements OnInit {
     this.housingService.getAllCities().subscribe( data => {
       this.cities = data;
     }
-    )
+    );
+    this.mapProperty();
   }
 
   createForm() {
