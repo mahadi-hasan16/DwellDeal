@@ -29,6 +29,8 @@ namespace DwellDeal.Data.Repository
         {
             var properties = await  _dbContext.Properties
             .Include(p => p.PropertyType)
+            .Include(p => p.City)
+            .Include(p => p.FurnishingType)
             .Where(p => p.SellRent == SellRent)
             .ToListAsync();
             return properties;
