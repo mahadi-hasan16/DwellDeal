@@ -47,22 +47,22 @@ export class AddPropertyComponent implements OnInit {
   addPropertyForm!: FormGroup;
 
   propertyView: Property = {
-    Id: 0,
-    SellRent: 0,
-    Name: '',
+    id: 0,
+    sellRent: 0,
+    name: '',
     // Location: null,
     // Contact: null,
-    Price: 0,
-    PType: '',
-    FType: '',
-    BHK: 0,
-    BuiltArea: 0,
-    City: '',
-    RTM: 0,
+    price: 0,
+    propertyType: '',
+    furnishingType: '',
+    bhk: 0,
+    builtArea: 0,
+    city: '',
+    readyToMove: false,
     Image: '',
     Address: null,
     PostedOn: null,
-    PostedBy: null
+    PostedBy: 0
   };
 
   constructor(
@@ -124,20 +124,20 @@ export class AddPropertyComponent implements OnInit {
   }
 
   mapProperty(): void {
-    this.property.SellRent = +this.SellRent.value;
-    this.property.Name = this.Name.value;
-    this.property.PType = this.PType.value;
-    this.property.BHK = this.BHK.value;
-    this.property.FType = this.FType.value;
-    this.property.Price = +this.Price.value;
-    this.property.BuiltArea = +this.BuiltArea.value;
+    this.property.sellRent = +this.SellRent.value;
+    this.property.name = this.Name.value;
+    this.property.propertyType = this.PType.value;
+    this.property.bhk = this.BHK.value;
+    this.property.furnishingType = this.FType.value;
+    this.property.price = +this.Price.value;
+    this.property.builtArea = +this.BuiltArea.value;
     this.property.CarpetArea = +this.CarpetArea.value;
     this.property.Address = this.Address.value;
     this.property.Address2 = this.Landmark.value;
-    this.property.City = this.City.value;
+    this.property.city = this.City.value;
     this.property.FloorNo = this.FloorNo.value;
     this.property.TotalFloor = this.TotalFloor.value;
-    this.property.RTM = this.RTM.value;
+    this.property.readyToMove = this.RTM.value;
     this.property.AOP = this.AOP.value;
     this.property.MainEntrance = this.MainEntrance.value;
     this.property.Security = this.Security.value;

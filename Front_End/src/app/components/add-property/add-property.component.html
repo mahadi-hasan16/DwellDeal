@@ -36,7 +36,7 @@
                   <div
                     class="btn-group mb-2"
                     btnRadioGroup
-                    [(ngModel)]="propertyView.BHK"
+                    [(ngModel)]="propertyView.bhk"
                     formControlName="BHK"
                   >
                     <label
@@ -54,7 +54,7 @@
                   <div
                     class="btn-group mb-2"
                     btnRadioGroup
-                    [(ngModel)]="propertyView.PType"
+                    [(ngModel)]="propertyView.propertyType"
                     formControlName="PType"
                   >
                     <label
@@ -72,7 +72,7 @@
                   <div
                     class="btn-group mb-2"
                     btnRadioGroup
-                    [(ngModel)]="propertyView.FType"
+                    [(ngModel)]="propertyView.furnishingType"
                     formControlName="FType"
                   >
                     <label
@@ -92,7 +92,7 @@
                     class="form-control"
                     ngModel
                     formControlName="Name"
-                    [(ngModel)]="propertyView.Name"
+                    [(ngModel)]="propertyView.name"
                   />
                   <!-- <span *ngIf="!propName.valid && propName.touched" class="error-block">
                       <span>Please provide name</span>
@@ -126,7 +126,7 @@
                     type="text"
                     class="form-control"
                     formControlName="Price"
-                    [(ngModel)]="propertyView.Price"
+                    [(ngModel)]="propertyView.price"
                   />
                 </div>
 
@@ -153,7 +153,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    [(ngModel)]="propertyView.BuiltArea"
+                    [(ngModel)]="propertyView.builtArea"
                     formControlName="BuiltArea"
                   />
                 </div>
@@ -245,7 +245,7 @@
               <tab heading="Other Details" formGroupName="OtherInfo">
                 <div
                   class="form-group col-12"
-                  [(ngModel)]="propertyView.RTM"
+                  [(ngModel)]="propertyView.readyToMove"
                   formControlName="RTM"
                 >
                   <p class="fw-bold">Ready to Move</p>

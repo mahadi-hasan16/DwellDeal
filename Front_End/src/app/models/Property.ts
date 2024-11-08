@@ -1,19 +1,23 @@
-export class Property{
-    Id: number = 0;
-    SellRent: number = 0;
-    Name: string | null = null;
-    PType: string | null = null;
-    BHK: number = 0;
-    FType: string | null = null;
-    Price: number = 0;
-    BuiltArea: number = 0;
+import { IPropertyBase } from "../interfaces/IPropertyBase";
+
+export class Property implements IPropertyBase{
+    id!: number;
+    sellRent!: number;
+    name!: string;
+    propertyType!: string;
+    furnishingType!: string;
+    price!: number;
+    bhk!: number;
+    builtArea!: number;
+    city!: string;
+    readyToMove!: boolean;
+    photo?: string | undefined;
+    estPossessionOn?: string | undefined;
     CarpetArea?: number;
     Address: string | null = null;
     Address2?: string;
-    City: string | null = '';
     FloorNo?: string;
     TotalFloor?: string;
-    RTM: number = 0;
     AOP?: string;
     MainEntrance?: string;
     Security?: number;

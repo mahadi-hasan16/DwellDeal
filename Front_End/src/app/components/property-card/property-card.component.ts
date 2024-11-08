@@ -20,7 +20,7 @@ import { Property } from '../../models/Property';
 export class PropertyCardComponent implements OnInit {
 
   constructor() { }
-  @Input() property: Property | any;
+  @Input() property!: Property;
   @Input() detailsButton: boolean = false;
 
   ngOnInit() {

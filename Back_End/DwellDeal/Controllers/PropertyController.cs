@@ -16,7 +16,7 @@ namespace DwellDeal.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("type/{sellRent}")]
+        [HttpGet("list/{sellRent}")]
         [AllowAnonymous]
         public async Task<IActionResult> GetPropertyList(int sellRent)
         {

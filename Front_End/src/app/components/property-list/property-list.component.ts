@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PropertyCardComponent } from '../property-card/property-card.component';
 import { CommonModule } from '@angular/common';
 import { HousingService } from '../../services/housing.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-property-list',
@@ -11,14 +12,22 @@ import { HousingService } from '../../services/housing.service';
   standalone: true,
 })
 export class PropertyListComponent implements OnInit {
+  sellRent: number = 1;
   properties: Array<any> = [];
-  constructor(private housingService: HousingService) {}
+  constructor(
+    private housingService: HousingService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.housingService.getAllProperties().subscribe(
-      (data: any) => {
-      this.properties = data;
+    if (this.route.snapshot.url.toString()) {
+      this.sellRent = 2;
     }
-  );
+    
+    this.housingService
+      .getAllProperties(this.sellRent)
+      .subscribe((data: any) => {
+        this.properties = data;
+      });
   }
 }
