@@ -5,12 +5,16 @@ import { RouterLink, RouterModule } from '@angular/router';
 import {MatTabsModule} from '@angular/material/tabs';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { Property } from '../../models/Property';
+import { HousingService } from '../../services/housing.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-property-details',
   templateUrl: './property-details.component.html',
   styleUrls: ['./property-details.component.css'],
   imports: [
+    CommonModule,
     RouterLink,
     FormsModule,
     MatTabsModule,
@@ -21,15 +25,19 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 })
 export class PropertyDetailsComponent implements OnInit {
   public propertyId: number = 0;
+  property = new Property();
+  public propertyAge!: string;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router, private housingService: HousingService) {}
 
   ngOnInit() {
-    this.propertyId = Number(this.route.snapshot.params['Id']);
+    this.route.data.subscribe((data: any) =>{
+      this.property = data['propertyDetail'] as Property;
+    })
 
-    this.route.params.subscribe((params) => {
-      this.propertyId = Number(params['Id']);
-    });
+    this.propertyAge = this.housingService.getPropertyAge(this.property.estPossessionOn);
+
+    //console.log(this.property);
   }
 
   onSelectNext() {

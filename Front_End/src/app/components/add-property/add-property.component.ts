@@ -46,7 +46,7 @@ export class AddPropertyComponent implements OnInit {
 
   addPropertyForm!: FormGroup;
 
-  propertyView: Property = {
+  propertyView: any = {
     id: 0,
     sellRent: 0,
     name: '',
@@ -59,10 +59,10 @@ export class AddPropertyComponent implements OnInit {
     builtArea: 0,
     city: '',
     readyToMove: false,
-    Image: '',
-    Address: null,
-    PostedOn: null,
-    PostedBy: 0
+    image: '',
+    address: null,
+    postedOn: null,
+    postedBy: 0
   };
 
   constructor(
@@ -131,22 +131,22 @@ export class AddPropertyComponent implements OnInit {
     this.property.furnishingType = this.FType.value;
     this.property.price = +this.Price.value;
     this.property.builtArea = +this.BuiltArea.value;
-    this.property.CarpetArea = +this.CarpetArea.value;
-    this.property.Address = this.Address.value;
-    this.property.Address2 = this.Landmark.value;
+    this.property.carpetArea = +this.CarpetArea.value;
+    this.property.address = this.Address.value;
+    this.property.address2 = this.Landmark.value;
     this.property.city = this.City.value;
-    this.property.FloorNo = this.FloorNo.value;
-    this.property.TotalFloor = this.TotalFloor.value;
+    this.property.floorNo = this.FloorNo.value;
+    this.property.totalFloors = this.TotalFloor.value;
     this.property.readyToMove = this.RTM.value;
-    this.property.AOP = this.AOP.value;
-    this.property.MainEntrance = this.MainEntrance.value;
-    this.property.Security = this.Security.value;
-    this.property.Gated = this.Gated.value;
-    this.property.Maintenance = this.Maintenance.value;
-    this.property.Possession = this.Possession.value;
+    this.property.aop = this.AOP.value;
+    this.property.mainEntrance = this.MainEntrance.value;
+    this.property.security = this.Security.value;
+    this.property.gated = this.Gated.value;
+    this.property.maintenance = this.Maintenance.value;
+    this.property.possession = this.Possession.value;
     // this.property.Image
-    this.property.Description = this.Description.value;
-    this.property.PostedOn = new Date().toString();
+    this.property.description = this.Description.value;
+    this.property.postedOn = new Date().toString();
     // this.property.PostedBy
   }
 

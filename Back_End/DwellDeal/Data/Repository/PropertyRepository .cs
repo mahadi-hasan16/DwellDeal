@@ -36,5 +36,17 @@ namespace DwellDeal.Data.Repository
             return properties;
         }
 
+        public async Task<Property> GetPropertyDetailAsync(int id)
+        {
+            var propertyDetail = await _dbContext.Properties
+            .Include(p => p.PropertyType)
+            .Include(p => p.City)
+            .Include(p => p.FurnishingType)
+            .Include(p => p.Photos)
+            .Where(p => p.Id == id)
+            .FirstAsync();
+
+            return propertyDetail;
+        }
     }
 }

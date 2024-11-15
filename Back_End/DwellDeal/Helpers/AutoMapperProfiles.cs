@@ -10,7 +10,15 @@ namespace DwellDeal.Helpers
         {
             CreateMap<City, CityDto>().ReverseMap();
 
+            CreateMap<Photo, PhotoDto>().ReverseMap();
+
             CreateMap<Property, PropertyListDto>()
+            .ForMember(destination => destination.City, option => option.MapFrom(source => source.City.Name))
+            .ForMember(destination => destination.Country, option => option.MapFrom(source => source.City.Country))
+            .ForMember(destination => destination.PropertyType, option => option.MapFrom(source => source.PropertyType.Name))
+            .ForMember(destination => destination.FurnishingType, option => option.MapFrom(source => source.FurnishingType.Name));
+
+            CreateMap<Property, PropertyDetailDto>()
             .ForMember(destination => destination.City, option => option.MapFrom(source => source.City.Name))
             .ForMember(destination => destination.Country, option => option.MapFrom(source => source.City.Country))
             .ForMember(destination => destination.PropertyType, option => option.MapFrom(source => source.PropertyType.Name))

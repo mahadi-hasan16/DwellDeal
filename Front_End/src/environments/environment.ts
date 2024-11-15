@@ -5,5 +5,7 @@ export const environment = {
     register:'/Application/register',
     login:'/Application/login',
 
-    getAllProperties: '/Property/list/'
+    getAllProperties: '/Property/list/',
+
+    getPropertyDetail: '/Property/detail/'
 }
