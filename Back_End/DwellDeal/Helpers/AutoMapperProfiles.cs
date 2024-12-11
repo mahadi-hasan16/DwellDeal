@@ -23,6 +23,8 @@ namespace DwellDeal.Helpers
             .ForMember(destination => destination.Country, option => option.MapFrom(source => source.City.Country))
             .ForMember(destination => destination.PropertyType, option => option.MapFrom(source => source.PropertyType.Name))
             .ForMember(destination => destination.FurnishingType, option => option.MapFrom(source => source.FurnishingType.Name));
+
+            CreateMap<PropertyType, KeyValuePairDto>().ReverseMap();
         }
     }
 }

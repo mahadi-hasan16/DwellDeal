@@ -4,6 +4,6 @@ namespace DwellDeal.Interfaces
 {
     public interface IPropertyTypeRepository
     {
-         Task<IEnumerable<PropertyType>> GetPropertyTypes();
+         Task<IEnumerable<PropertyType>> GetPropertyTypesAsync();
     }
 }
