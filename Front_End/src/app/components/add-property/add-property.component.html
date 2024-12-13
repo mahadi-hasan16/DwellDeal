@@ -60,10 +60,10 @@
                     <label
                       *ngFor="let ptype of propertyTypes"
                       class="btn btn-outline-primary m-1"
-                      [btnRadio]="ptype"
+                      [btnRadio]="ptype.id"
                       tabindex="0"
                       role="button"
-                      >{{ ptype }}</label
+                      >{{ ptype.name }}</label
                     >
                   </div>
                   <br />
@@ -78,10 +78,10 @@
                     <label
                       *ngFor="let ftype of furnushTypes"
                       class="btn btn-outline-primary m-1"
-                      [btnRadio]="ftype"
+                      [btnRadio]="ftype.id"
                       tabindex="0"
                       role="button"
-                      >{{ ftype }}</label
+                      >{{ ftype.name }}</label
                     >
                   </div>
                   <br />

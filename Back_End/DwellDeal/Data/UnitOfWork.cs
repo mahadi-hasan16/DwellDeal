@@ -17,6 +17,7 @@ namespace DwellDeal.Data
         
         public IPropertyRepository PropertyRepository => new PropertyRepository(_dbContext);
         public IPropertyTypeRepository PropertyTypeRepository => new PropertyTypeRepository(_dbContext);
+        public IFurnishingTypeRepository FurnishingTypeRepository => new FurnishingTypeRepository(_dbContext);
 
         public async Task SaveChangesAsync()
         {

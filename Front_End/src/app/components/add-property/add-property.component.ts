@@ -16,6 +16,7 @@ import { PropertyCardComponent } from '../property-card/property-card.component'
 import { IPropertyBase } from '../../interfaces/IPropertyBase';
 import { Property } from '../../models/Property';
 import { HousingService } from '../../services/housing.service';
+import { IKeyValuePair } from '../../models/IKeyValuePair';
 
 @Component({
   selector: 'app-add-property',
@@ -40,8 +41,8 @@ export class AddPropertyComponent implements OnInit {
   property: Property = new Property();
   sellRent = '1';
 
-  propertyTypes: Array<String> = ['House', 'Appartment', 'Duplex', 'Triplex'];
-  furnushTypes: Array<String> = ['Semi', 'Full', 'Unfurnished'];
+  propertyTypes!: IKeyValuePair[];
+  furnushTypes!: IKeyValuePair[];
   cities: Array<String> = [];
 
   addPropertyForm!: FormGroup;
@@ -77,7 +78,16 @@ export class AddPropertyComponent implements OnInit {
       this.cities = data;
     }
     );
+
     this.mapProperty();
+
+    this.housingService.getPropertyTypes().subscribe(data =>{
+      this.propertyTypes = data;
+    });
+
+    this.housingService.getFurnisihingTypes().subscribe(data =>{
+      this.furnushTypes = data;
+    });
   }
 
   createForm() {

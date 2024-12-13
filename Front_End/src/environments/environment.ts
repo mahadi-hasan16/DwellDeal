@@ -7,5 +7,8 @@ export const environment = {
 
     getAllProperties: '/Property/list/',
 
-    getPropertyDetail: '/Property/detail/'
+    getPropertyDetail: '/Property/detail/',
+
+    getPropertyTypes: '/propertytype/list',
+    getFurnishingTypes: '/furnishingtype/list'
 }

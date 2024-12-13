@@ -6,6 +6,7 @@
         IUserRepository UserRepository { get; }
         IPropertyRepository PropertyRepository { get; }
         IPropertyTypeRepository PropertyTypeRepository { get; }
+        IFurnishingTypeRepository FurnishingTypeRepository { get; }
         Task SaveChangesAsync();
     }
 }
