@@ -1,4 +1,4 @@
-namespace DwellDeal.Models.DTOs
+namespace DwellDeal.Models.DTOs.PhotoDtos
 {
     public class PhotoDto
     {

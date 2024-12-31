@@ -1,5 +1,4 @@
 export interface IPropertyBase {
-    id: number;
     sellRent: number;
     name: string;
     propertyType: string;
@@ -10,5 +9,5 @@ export interface IPropertyBase {
     city: string;
     readyToMove: boolean;
     photo?: string;
-    estPossessionOn?: Date;
+    estPossessionOn?: string | null;
 }

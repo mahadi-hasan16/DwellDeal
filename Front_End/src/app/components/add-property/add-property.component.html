@@ -36,13 +36,13 @@
                   <div
                     class="btn-group mb-2"
                     btnRadioGroup
-                    [(ngModel)]="propertyView.bhk"
                     formControlName="BHK"
                   >
                     <label
                       *ngFor="let bhk of [1, 2, 3, 4, 5]"
                       class="btn btn-outline-primary m-1"
                       [btnRadio]="bhk"
+                      (click)="propertyView.bhk = bhk"
                       tabindex="0"
                       role="button"
                       >{{ bhk }}</label
@@ -54,13 +54,13 @@
                   <div
                     class="btn-group mb-2"
                     btnRadioGroup
-                    [(ngModel)]="propertyView.propertyType"
                     formControlName="PType"
                   >
                     <label
                       *ngFor="let ptype of propertyTypes"
                       class="btn btn-outline-primary m-1"
                       [btnRadio]="ptype.id"
+                      (click)="propertyView.propertyType = ptype.name"
                       tabindex="0"
                       role="button"
                       >{{ ptype.name }}</label
@@ -72,13 +72,13 @@
                   <div
                     class="btn-group mb-2"
                     btnRadioGroup
-                    [(ngModel)]="propertyView.furnishingType"
                     formControlName="FType"
                   >
                     <label
                       *ngFor="let ftype of furnushTypes"
                       class="btn btn-outline-primary m-1"
                       [btnRadio]="ftype.id"
+                      (click)="propertyView.furnishingType = ftype.name"
                       tabindex="0"
                       role="button"
                       >{{ ftype.name }}</label
@@ -88,11 +88,12 @@
 
                   <label class="fw-bold">Building/Society/Project Name</label>
                   <input
+                    #name
                     type="text"
                     class="form-control"
                     ngModel
                     formControlName="Name"
-                    [(ngModel)]="propertyView.name"
+                    (keyup)="propertyView.name = name.value"
                   />
                   <!-- <span *ngIf="!propName.valid && propName.touched" class="error-block">
                       <span>Please provide name</span>
@@ -101,10 +102,26 @@
                 </div>
 
                 <div class="form-group col-12">
-                  <label class="fw-bold">City</label><br>
-                  <select class="btn btn-primary" name="" id="">
+                  <label class="fw-bold">City</label><br />
+                  <select
+                  formControlName="City"
+                    #City
+                    (change)="
+                      propertyView.city =
+                        City.options[City.options.selectedIndex].text
+                    "
+                    class="btn btn-primary"
+                    name=""
+                    id=""
+                  >
                     <option value="">-Select City-</option>
-                    <option class="bg-white text-black" *ngFor="let city of cities" value="{{city}}">{{city}}</option>
+                    <option
+                      class="bg-white text-black"
+                      *ngFor="let city of cities"
+                      value="{{city.id}}"
+                    >
+                      {{ city.name }}
+                    </option>
                   </select>
                 </div>
 
@@ -123,10 +140,11 @@
                 <div class="form-group col-12">
                   <label class="fw-bold">Price (in USD)</label>
                   <input
+                    #price
                     type="text"
                     class="form-control"
                     formControlName="Price"
-                    [(ngModel)]="propertyView.price"
+                    (keyup)="propertyView.price = price.value"
                   />
                 </div>
 
@@ -151,9 +169,10 @@
                 <div class="form-group col-12">
                   <label class="fw-bold">Built Area (in Sqr Feet)</label>
                   <input
+                    #builtArea
                     type="text"
                     class="form-control"
-                    [(ngModel)]="propertyView.builtArea"
+                    (keyup)="propertyView.builtArea = builtArea.value"
                     formControlName="BuiltArea"
                   />
                 </div>
@@ -243,106 +262,128 @@
               </tab>
 
               <tab heading="Other Details" formGroupName="OtherInfo">
-                <div
-                  class="form-group col-12"
-                  [(ngModel)]="propertyView.readyToMove"
-                  formControlName="RTM"
-                >
-                  <p class="fw-bold">Ready to Move</p>
+                <div class="form-group col-12">
+                  <p>Ready to Move</p>
+                  <div class="btn-group" btnRadioGroup formControlName="RTM">
+                    <label
+                      class="btn btn-outline-primary m-1"
+                      btnRadio="true"
+                      tabindex="0"
+                      role="button"
+                      (click)="propertyView.readyToMove = true"
+                      name="RTM"
+                      >Yes
+                    </label>
 
-                  <label
-                    class="btn btn-outline-primary m-1"
-                    btnRadio="1"
-                    role="button"
-                    >Yes</label
-                  >
-
-                  <label
-                    class="btn btn-outline-primary m-1"
-                    btnRadio="2"
-                    role="button"
-                    >No</label
-                  >
+                    <label
+                      class="btn btn-outline-primary m-1"
+                      btnRadio="false"
+                      tabindex="0"
+                      role="button"
+                      (click)="propertyView.readyToMove = false"
+                      name="RTM"
+                      >No
+                    </label>
+                  </div>
                 </div>
 
-                <div class="form-group col-3">
-                  <label class="fw-bold">Possession/Avaialble From</label>
+                <div class="form-group col-6">
+                  <label *ngIf="propertyView.readyToMove"
+                    >Establishment Date</label
+                  >
+                  <label class="m-1" *ngIf="!propertyView.readyToMove"
+                    >Possession Date</label
+                  >
                   <input
                     type="date"
                     class="form-control"
                     formControlName="PossessionOn"
+                    #possessionOn
+                    (bsValueChange)="
+                      propertyView.estPossessionOn = possessionOn.value
+                    "
+                    bsDatepicker
                   />
                 </div>
 
                 <div class="form-group col-12">
-                  <label>Age of Property</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    formControlName="AOP"
-                  />
-                </div>
-
-                <div class="form-group col-12">
-                  <p class="fw-bold">Gated Community</p>
-
-                  <div
-                    class="btn-group mb-2"
-                    btnRadioGroup
-                    formControlName="Gated"
-                  >
+                  <p>Gated Community</p>
+                  <div class="btn-group" btnRadioGroup formControlName="Gated">
                     <label
                       class="btn btn-outline-primary m-1"
-                      btnRadio="1"
+                      btnRadio="true"
+                      tabindex="0"
                       role="button"
+                      name="Gated"
                       >Yes</label
                     >
-
                     <label
                       class="btn btn-outline-primary m-1"
-                      btnRadio="2"
+                      btnRadio="false"
+                      tabindex="0"
                       role="button"
+                      name="Gated"
                       >No</label
                     >
                   </div>
                 </div>
 
-                <p class="mt-2 fw-bold">Ready to Move</p>
-                <div class="btn-group mb-2" btnRadioGroup formControlName="RTM">
-                  <label
-                    *ngFor="let dir of ['East', 'West', 'North', 'South']"
-                    class="btn btn-outline-primary m-1"
-                    [btnRadio]="dir"
-                    tabindex="0"
-                    role="button"
-                    >{{ dir }}</label
-                  >
-                </div>
-                <br />
-
                 <div class="form-group col-12">
-                  <label class="fw-bold">Main Entrance</label>
-                  <input
-                    type="text"
-                    class="form-control"
+                  <p>Main Entrance</p>
+                  <div
+                    class="btn-group"
+                    btnRadioGroup
                     formControlName="MainEntrance"
-                  />
+                  >
+                    <label
+                      class="btn btn-outline-primary m-1"
+                      btnRadio="East"
+                      tabindex="0"
+                      role="button"
+                      name="Entrance"
+                      >East</label
+                    >
+                    <label
+                      class="btn btn-outline-primary m-1"
+                      btnRadio="West"
+                      tabindex="0"
+                      role="button"
+                      name="Entrance"
+                      >West</label
+                    >
+                    <label
+                      class="btn btn-outline-primary m-1"
+                      btnRadio="South"
+                      tabindex="0"
+                      role="button"
+                      name="Entrance"
+                      >South</label
+                    >
+                    <label
+                      class="btn btn-outline-primary m-1"
+                      btnRadio="North"
+                      tabindex="0"
+                      role="button"
+                      name="Entrance"
+                      >North</label
+                    >
+                  </div>
                 </div>
 
                 <div class="form-group col-12">
-                  <label class="fw-bold">Description</label>
+                  <label>Description</label>
                   <textarea
                     type="text"
                     class="form-control"
-                    rows="6"
                     formControlName="Description"
+                    rows="6"
                   ></textarea>
                 </div>
 
-                <div class="form-group mt-2 col-12">
+                <div class="form-group col-12">
                   <button
                     type="button"
-                    class="btn btn-primary w-100"
+                    class="btn btn-primary btn-block mt-2 w-100"
                     (click)="selectTab(4)"
                   >
                     Next
@@ -350,7 +391,7 @@
 
                   <button
                     type="button"
-                    class="btn btn-primary mt-2 w-100"
+                    class="btn btn-primary btn-block mt-2 w-100"
                     (click)="selectTab(2)"
                   >
                     Back
@@ -388,7 +429,7 @@
       </div>
     </div>
     <div>
-      <app-property-card
+      <app-property-card class="w-100"
         [property]="propertyView"
         [detailsButton]="true"
       ></app-property-card>

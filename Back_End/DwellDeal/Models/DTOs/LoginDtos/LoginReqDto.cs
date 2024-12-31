@@ -1,6 +1,6 @@
 ﻿using Azure.Identity;
 
-namespace DwellDeal.Models.DTOs
+namespace DwellDeal.Models.DTOs.LoginDtos
 {
     public class LoginReqDto
     {

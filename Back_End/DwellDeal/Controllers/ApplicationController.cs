@@ -5,6 +5,7 @@ using DwellDeal.Errors;
 using DwellDeal.Extentions;
 using DwellDeal.Interfaces;
 using DwellDeal.Models.DTOs;
+using DwellDeal.Models.DTOs.LoginDtos;
 using DwellDeal.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

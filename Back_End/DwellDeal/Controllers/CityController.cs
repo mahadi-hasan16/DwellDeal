@@ -3,7 +3,9 @@ using AutoMapper;
 using DwellDeal.Data;
 using DwellDeal.Interfaces;
 using DwellDeal.Models.DTOs;
+using DwellDeal.Models.DTOs.CityDtos;
 using DwellDeal.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,10 +24,11 @@ namespace DwellDeal.Controllers
             _mapper = mapper;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetCities()
         {
-            throw new UnauthorizedAccessException();
+            // throw new UnauthorizedAccessException();
             var cities = await _unitOfWork.CityRepository.GetCitiesAsync();
 
             var citiesDto = _mapper.Map<IEnumerable<CityDto>>(cities);

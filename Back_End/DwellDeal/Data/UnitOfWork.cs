@@ -22,7 +22,6 @@ namespace DwellDeal.Data
         public async Task SaveChangesAsync()
         {
             await _dbContext.SaveChangesAsync();
-            //throw new NotImplementedException();
         }
     }
 }

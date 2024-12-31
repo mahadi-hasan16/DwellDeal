@@ -1,9 +1,9 @@
-namespace DwellDeal.Models.DTOs
+namespace DwellDeal.Models.DTOs.PropertyDtos
 {
-    public class PropertyDto
+    public class PropertyListDto
     {
         public int Id { get; set; }
-        public int SellRent {get; set;}
+        public int sellRent { get; set; }
         public string Name { get; set; }
         public string PropertyType { get; set; }
         public string FurnishingType { get; set; }
@@ -15,5 +15,6 @@ namespace DwellDeal.Models.DTOs
         public bool ReadyToMove { get; set; }
         public DateTime EstPossessionOn { get; set; }
         public string Photo { get; set; }
+
     }
 }

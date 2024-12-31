@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
 using DwellDeal.Models.DTOs;
+using DwellDeal.Models.DTOs.CityDtos;
+using DwellDeal.Models.DTOs.PhotoDtos;
+using DwellDeal.Models.DTOs.PropertyDtos;
 using DwellDeal.Models.Entities;
 
 namespace DwellDeal.Helpers
@@ -11,6 +14,8 @@ namespace DwellDeal.Helpers
             CreateMap<City, CityDto>().ReverseMap();
 
             CreateMap<Photo, PhotoDto>().ReverseMap();
+
+            CreateMap<Property, PropertyDto>().ReverseMap();
 
             CreateMap<Property, PropertyListDto>()
             .ForMember(destination => destination.City, option => option.MapFrom(source => source.City.Name))

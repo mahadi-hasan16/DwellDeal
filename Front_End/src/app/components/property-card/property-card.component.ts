@@ -18,12 +18,15 @@ import { Property } from '../../models/Property';
   standalone: true
 })
 export class PropertyCardComponent implements OnInit {
+console: any;
 
   constructor() { }
   @Input() property!: Property;
   @Input() detailsButton: boolean = false;
 
   ngOnInit() {
+    console.log(this.property.id);
+    
   }
 
 }

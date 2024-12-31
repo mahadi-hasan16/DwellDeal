@@ -1,6 +1,7 @@
 using AutoMapper;
 using DwellDeal.Interfaces;
 using DwellDeal.Models.DTOs;
+using DwellDeal.Models.DTOs.PropertyDtos;
 using DwellDeal.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,20 @@ namespace DwellDeal.Controllers
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+        }
+
+        [HttpPost("add")]
+        [AllowAnonymous]
+        public async Task<IActionResult> AddProperty(PropertyDto propertyDto)
+        {
+            var property = _mapper.Map<Property>(propertyDto);
+
+            property.PostedBy = 3;
+            property.LastUpdatedBy = 3;
+            
+            _unitOfWork.PropertyRepository.AddProperty(property);
+            await _unitOfWork.SaveChangesAsync();
+            return StatusCode(201);
         }
 
         [HttpGet("list/{sellRent}")]

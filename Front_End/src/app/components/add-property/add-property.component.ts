@@ -1,28 +1,28 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
   FormGroup,
   FormsModule,
-  NgForm,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TabsetComponent, TabsModule } from 'ngx-bootstrap/tabs';
-import { PropertyCardComponent } from '../property-card/property-card.component';
-import { IPropertyBase } from '../../interfaces/IPropertyBase';
+import { City } from '../../models/City';
+import { IKeyValuePair } from '../../models/IKeyValuePair';
 import { Property } from '../../models/Property';
 import { HousingService } from '../../services/housing.service';
-import { IKeyValuePair } from '../../models/IKeyValuePair';
+import { PropertyCardComponent } from '../property-card/property-card.component';
 
 @Component({
   selector: 'app-add-property',
   templateUrl: './add-property.component.html',
   styleUrls: ['./add-property.component.css'],
   standalone: true,
+  providers: [DatePipe],
   imports: [
     PropertyCardComponent,
     CommonModule,
@@ -43,7 +43,7 @@ export class AddPropertyComponent implements OnInit {
 
   propertyTypes!: IKeyValuePair[];
   furnushTypes!: IKeyValuePair[];
-  cities: Array<String> = [];
+  cities!: City[];
 
   addPropertyForm!: FormGroup;
 
@@ -63,10 +63,11 @@ export class AddPropertyComponent implements OnInit {
     image: '',
     address: null,
     postedOn: null,
-    postedBy: 0
+    postedBy: 0,
   };
 
   constructor(
+    private datePipe: DatePipe,
     private router: Router,
     private formBuilder: FormBuilder,
     private housingService: HousingService
@@ -74,18 +75,18 @@ export class AddPropertyComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-    this.housingService.getAllCities().subscribe( data => {
-      this.cities = data;
-    }
-    );
-
     this.mapProperty();
 
-    this.housingService.getPropertyTypes().subscribe(data =>{
+    this.housingService.getAllCities().subscribe((data) => {
+      this.cities = data;
+      // console.log(this.cities);
+    });
+
+    this.housingService.getPropertyTypes().subscribe((data) => {
       this.propertyTypes = data;
     });
 
-    this.housingService.getFurnisihingTypes().subscribe(data =>{
+    this.housingService.getFurnisihingTypes().subscribe((data) => {
       this.furnushTypes = data;
     });
   }
@@ -136,27 +137,30 @@ export class AddPropertyComponent implements OnInit {
   mapProperty(): void {
     this.property.sellRent = +this.SellRent.value;
     this.property.name = this.Name.value;
-    this.property.propertyType = this.PType.value;
+    this.property.propertyTypeId = this.PType.value;
     this.property.bhk = this.BHK.value;
-    this.property.furnishingType = this.FType.value;
+    this.property.furnishingTypeId = this.FType.value;
     this.property.price = +this.Price.value;
     this.property.builtArea = +this.BuiltArea.value;
     this.property.carpetArea = +this.CarpetArea.value;
     this.property.address = this.Address.value;
     this.property.address2 = this.Landmark.value;
-    this.property.city = this.City.value;
+    this.property.cityId = +this.City.value;
     this.property.floorNo = this.FloorNo.value;
     this.property.totalFloors = this.TotalFloor.value;
-    this.property.readyToMove = this.RTM.value;
-    this.property.aop = this.AOP.value;
+    this.property.readyToMove = this.RTM.value === 'true' ? true : false;
+    // this.property.aop = this.AOP.value;
     this.property.mainEntrance = this.MainEntrance.value;
     this.property.security = this.Security.value;
-    this.property.gated = this.Gated.value;
+    this.property.gated = this.Gated.value === 'true' ? true : false;
     this.property.maintenance = this.Maintenance.value;
-    this.property.possession = this.Possession.value;
+    this.property.estPossessionOn = this.datePipe.transform(
+      this.PossessionOn.value,
+      'yyyy-MM-ddTHH:mm:ss'
+    );
     // this.property.Image
     this.property.description = this.Description.value;
-    this.property.postedOn = new Date().toString();
+    // this.property.postedOn = new Date().toString();
     // this.property.PostedBy
   }
 
@@ -248,7 +252,7 @@ export class AddPropertyComponent implements OnInit {
     return this.OtherInfo.controls['RTM'] as FormControl;
   }
 
-  get Possession() {
+  get PossessionOn() {
     return this.OtherInfo.controls['PossessionOn'] as FormControl;
   }
 
@@ -274,9 +278,13 @@ export class AddPropertyComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Submitted');
+    debugger;
     this.mapProperty();
-    this.housingService.addProperty(this.property);
-    // console.log(Form.value);
+    console.log(this.property);
+
+    this.housingService.addProperty(this.property).subscribe((data: any) => {
+      console.log(data, 'resssssssssssss');
+      console.log('Submitted');
+    });
   }
 }

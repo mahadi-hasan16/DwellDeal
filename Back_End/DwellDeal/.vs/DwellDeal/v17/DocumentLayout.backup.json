@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Migrations\\20241013185931_Adding more entities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241013185931_Adding more entities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\controllers\\propertycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|solutionrelative:controllers\\propertycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7DCB219C-085D-47E3-8A10-9A4603F670BC}|DwellDeal.csproj|d:\\developent\\dotnet\\projects\\dwelldeal\\back_end\\dwelldeal\\models\\entities\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20241013185931_Adding more entities.cs",
-              "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Migrations\\20241013185931_Adding more entities.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241013185931_Adding more entities.cs",
-              "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Migrations\\20241013185931_Adding more entities.cs",
-              "RelativeToolTip": "Migrations\\20241013185931_Adding more entities.cs",
-              "ViewState": "AgIAAI8AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Title": "PropertyController.cs",
+              "DocumentMoniker": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Controllers\\PropertyController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PropertyController.cs",
+              "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Controllers\\PropertyController.cs",
+              "RelativeToolTip": "Controllers\\PropertyController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAwwBcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T18:59:31.487Z",
+              "WhenOpened": "2024-12-21T15:17:59.621Z",
               "EditorCaption": ""
             },
             {
@@ -45,7 +45,7 @@
               "RelativeDocumentMoniker": "Models\\Entities\\Property.cs",
               "ToolTip": "D:\\Developent\\Dotnet\\Projects\\DwellDeal\\Back_End\\DwellDeal\\Models\\Entities\\Property.cs",
               "RelativeToolTip": "Models\\Entities\\Property.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAowAwAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowAYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T16:52:07.049Z",
               "EditorCaption": ""

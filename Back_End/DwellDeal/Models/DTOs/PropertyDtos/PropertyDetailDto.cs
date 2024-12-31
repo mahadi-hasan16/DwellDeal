@@ -1,6 +1,8 @@
-namespace DwellDeal.Models.DTOs
+using DwellDeal.Models.DTOs.PropertyDtos;
+
+namespace DwellDeal.Models.DTOs.PropertyDtos
 {
-    public class PropertyDetailDto : PropertyDto
+    public class PropertyDetailDto : PropertyListDto
     {
         public int CarpetArea { get; set; }
         public string Address { get; set; }
@@ -13,5 +15,6 @@ namespace DwellDeal.Models.DTOs
         public int Maintenance { get; set; }
         public int Age { get; set; }
         public string Description { get; set; }
+        // public ICollection<PhotoDto> Photos { get; set; }
     }
 }
