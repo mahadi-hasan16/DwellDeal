@@ -75,7 +75,6 @@ getFurnisihingTypes(): Observable<IKeyValuePair[]>{
 }
 
 addProperty(property: Property){
-  debugger;
   var test = this.add_Property;
   return this.httpClient.post(this.add_Property, property);
 }

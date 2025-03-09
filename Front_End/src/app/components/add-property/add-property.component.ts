@@ -146,14 +146,14 @@ export class AddPropertyComponent implements OnInit {
     this.property.address = this.Address.value;
     this.property.address2 = this.Landmark.value;
     this.property.cityId = +this.City.value;
-    this.property.floorNo = this.FloorNo.value;
-    this.property.totalFloors = this.TotalFloor.value;
+    this.property.floorNo = +this.FloorNo.value;
+    this.property.totalFloors = +this.TotalFloor.value;
     this.property.readyToMove = this.RTM.value === 'true' ? true : false;
     // this.property.aop = this.AOP.value;
     this.property.mainEntrance = this.MainEntrance.value;
-    this.property.security = this.Security.value;
+    this.property.security = +this.Security.value;
     this.property.gated = this.Gated.value === 'true' ? true : false;
-    this.property.maintenance = this.Maintenance.value;
+    this.property.maintenance = +this.Maintenance.value;
     this.property.estPossessionOn = this.datePipe.transform(
       this.PossessionOn.value,
       'yyyy-MM-ddTHH:mm:ss'

@@ -1,6 +1,6 @@
 import { IPropertyBase } from "../interfaces/IPropertyBase";
 
-export class Property implements IPropertyBase{
+export class Property{
     id!: number;
     sellRent!: number;
     name!: string;
@@ -16,14 +16,14 @@ export class Property implements IPropertyBase{
     address2?: string;
     cityId!: number;
     city!: string;
-    floorNo?: string;
-    totalFloors?: string;
+    floorNo!: number | 0;
+    totalFloors!: number;
     readyToMove!: boolean;
     age?: string;
-    mainEntrance?: string;
-    security?: number;
+    mainEntrance!: number;
+    security!: number;
     gated?: boolean;
-    maintenance?: number;
+    maintenance!: number;
     estPossessionOn!: string | null;
     photo?: string;
     description?: string;
